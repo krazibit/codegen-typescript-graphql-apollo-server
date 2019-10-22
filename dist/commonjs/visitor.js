@@ -8,7 +8,7 @@ class GraphQLRequestVisitor extends visitor_plugin_common_1.ClientSideBaseVisito
         super(schema, fragments, rawConfig, {});
         this._operationsToInclude = [];
         autoBind(this);
-        this._additionalImports.push(`import { ApolloServerBase } from 'apollo-server-core'';`);
+        this._additionalImports.push(`import { ApolloServerBase } from 'apollo-server-core';`);
         this._additionalImports.push(`import { print } from 'graphql';`);
     }
     buildOperation(node, documentVariableName, operationType, operationResultType, operationVariablesTypes) {

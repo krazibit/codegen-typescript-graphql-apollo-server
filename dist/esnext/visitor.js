@@ -6,7 +6,7 @@ export class GraphQLRequestVisitor extends ClientSideBaseVisitor {
         super(schema, fragments, rawConfig, {});
         this._operationsToInclude = [];
         autoBind(this);
-        this._additionalImports.push(`import { ApolloServerBase } from 'apollo-server-core'';`);
+        this._additionalImports.push(`import { ApolloServerBase } from 'apollo-server-core';`);
         this._additionalImports.push(`import { print } from 'graphql';`);
     }
     buildOperation(node, documentVariableName, operationType, operationResultType, operationVariablesTypes) {
