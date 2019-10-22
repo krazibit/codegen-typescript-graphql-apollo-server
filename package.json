@@ -1,5 +1,5 @@
 {
-  "name": "typescript-graphql-apollo-server",
+  "name": "@graphql-codegen/typescript-apollo-server",
   "version": "1.8.1",
   "description": "GraphQL Code Generator plugin for generating a ready-to-use SDK based on graphql--apollo-server and GraphQL operations",
   "repository": "git@github.com:dotansimha/graphql-code-generator.git",
