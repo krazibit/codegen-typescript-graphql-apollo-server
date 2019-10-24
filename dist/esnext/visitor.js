@@ -24,7 +24,11 @@ export class GraphQLRequestVisitor extends ClientSideBaseVisitor {
             .map(o => {
             const optionalVariables = !o.node.variableDefinitions || o.node.variableDefinitions.length === 0 || o.node.variableDefinitions.every(v => v.type.kind !== Kind.NON_NULL_TYPE || v.defaultValue);
             return `${o.node.name.value}(variables${optionalVariables ? '?' : ''}: ${o.operationVariablesTypes}): Promise<${o.operationResultType}> {
-  return client.executeOperation({query: print(${o.documentVariableName}), variables}).then((r) => ({...(r.data as ${o.operationResultType})}));
+  return client.executeOperation({query: print(${o.documentVariableName}), variables})
+    .then((r) => {
+      if (r.errors) throw r.errors[0]
+      return {...(r.data as ${o.operationResultType})}
+    });
 }`;
         })
             .map(s => indentMultiline(s, 2));
