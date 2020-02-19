@@ -17,14 +17,9 @@
     "@graphql-codegen/visitor-plugin-common": "1.8.1",
     "bundle-dependencies": "^1.0.2",
     "graphql-toolkit": "0.5.16",
-    "tslib": "1.10.0"
-  },
-  "devDependencies": {
+    "tslib": "1.10.0",
     "@graphql-codegen/testing": "1.8.1",
-    "graphql": "14.5.8",
-    "jest": "24.9.0",
-    "ts-jest": "24.1.0",
-    "typescript": "3.6.4"
+    "graphql": "14.5.8"
   },
   "sideEffects": false,
   "main": "dist/commonjs/index.js",
@@ -41,8 +36,10 @@
   },
   "bundledDependencies": [
     "@graphql-codegen/plugin-helpers",
+    "@graphql-codegen/testing",
     "@graphql-codegen/visitor-plugin-common",
     "bundle-dependencies",
+    "graphql",
     "graphql-toolkit",
     "tslib"
   ]
