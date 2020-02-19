@@ -6,14 +6,16 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -m esnext --outDir dist/esnext && tsc -m commonjs --outDir dist/commonjs",
-    "test": "jest --config ../../../../jest.config.js"
+    "test": "jest --config ../../../../jest.config.js",
+    "bundle-dependencies": "bundle-dependencies"
   },
-  "peerDependenxcies": {
+  "peerDependencies": {
     "graphql-tag": "^2.0.0"
   },
   "dependencies": {
     "@graphql-codegen/plugin-helpers": "1.8.1",
     "@graphql-codegen/visitor-plugin-common": "1.8.1",
+    "bundle-dependencies": "^1.0.2",
     "graphql-toolkit": "0.5.16",
     "tslib": "1.10.0"
   },
@@ -36,5 +38,12 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "bundledDependencies": [
+    "@graphql-codegen/plugin-helpers",
+    "@graphql-codegen/visitor-plugin-common",
+    "bundle-dependencies",
+    "graphql-toolkit",
+    "tslib"
+  ]
 }
